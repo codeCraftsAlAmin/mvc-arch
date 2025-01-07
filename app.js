@@ -3,25 +3,16 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const userRouter = require("./routes/user.route");
-require("./config/user.db");
+require("./config/user.db")
 
-// Add timeout middleware first
-app.use((req, res, next) => {
-  res.setTimeout(25000, () => {
-    res.status(504).send('Request Timeout');
-  });
-  next();
-});
-
-// Your existing middleware
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/api", userRouter);
+app.use("/api/users",userRouter);
 
-// Your existing routes
+// base route
 app.get("/", (req, res) => {
-  res.sendFile(_dirname + "./views/index.html");
+  res.sendFile(__dirname + "/./views/index.html");
 });
 
 // handle route error
