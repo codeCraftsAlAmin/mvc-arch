@@ -8,7 +8,7 @@ require("./config/user.db")
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(userRouter);
+app.use("/api",userRouter);
 
 // base route
 app.get("/", (req, res) => {
