@@ -11,14 +11,8 @@ app.use(express.json());
 app.use("/api/users", userRouter);
 
 // base route
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "/./views/index.html");
-// });
-
-const path = require("path");
-
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "index.html"));
+  res.sendFile(__dirname + "/./views/index.html");
 });
 
 // handle route error
