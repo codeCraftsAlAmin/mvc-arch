@@ -19,8 +19,8 @@
       "dest": "/dist/$1"
     },
     {
-      "src": "index.html",
-      "use": "@vercel/static"
+      "src": "/index.html", 
+      "dest": "/index.html" 
     }
   ]
 }
