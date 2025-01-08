@@ -3,16 +3,22 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const userRouter = require("./routes/user.route");
-require("./config/user.db")
+require("./config/user.db");
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/api/users",userRouter);
+app.use("/api/users", userRouter);
 
 // base route
+// app.get("/", (req, res) => {
+//   res.sendFile(__dirname + "/./views/index.html");
+// });
+
+const path = require("path");
+
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/./views/index.html");
+  res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 // handle route error
