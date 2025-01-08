@@ -12,7 +12,12 @@ app.use("/api/users", userRouter);
 
 // base route
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/./views/index.html");
+  res.status(200).json({
+    api: "mvc-architecture",
+    createdOn: "01-08-25",
+    mvc: "model, views, controller, config",
+    routes: "/api/users",
+  });
 });
 
 // handle route error
