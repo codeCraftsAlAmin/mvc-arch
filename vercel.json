@@ -16,11 +16,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/$1"
-    },
-    {
-      "src": "/index.html", 
-      "dest": "/index.html" 
+      "dest": "/views/$1"
     }
   ]
 }
