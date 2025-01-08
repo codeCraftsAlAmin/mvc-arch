@@ -29,7 +29,7 @@ const getOneUser = async (req, res) => {
   try {
     const id = req.params.id;
     const users = await Users.findOne({ _id: id });
-    res.status(404).send(users);
+    res.status(202).send(users);
   } catch (error) {
     res.status(404).send({ message: error.message });
   }
