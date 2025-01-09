@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
 // get all users
 const getAllusers = async (req, res) => {
   try {
-    const users = await Users.find();
+    const users = await Users.find().limit(100);
     res.status(201).send(users);
   } catch (error) {
     res.status(404).send({ message: error.message });
