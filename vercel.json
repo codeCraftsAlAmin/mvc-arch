@@ -8,7 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/users.(.*)",
+      "src": "/api/users/(.*)",
       "dest": "index.js"
     }
   ]
