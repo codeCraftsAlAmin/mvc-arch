@@ -13,10 +13,7 @@ const dbUrl = config.db.url;
 
 const connectDb = async () => {
   try {
-    await mongoose.connect(dbUrl, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(dbUrl);
     console.log("db is connected");
   } catch (error) {
     console.log(error.message);
