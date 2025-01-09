@@ -13,19 +13,11 @@ const dbUrl = config.db.url;
 
 const connectDb = async () => {
   try {
-    if (mongoose.connection.readyState === 0) {
-      await mongoose.connect(dbUrl, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        connectTimeoutMS: 10000,
-        serverSelectionTimeoutMS: 10000,
-      });
-    }
+    await mongoose.connect(dbUrl);
     console.log("db is connected");
   } catch (error) {
     console.log(error.message);
     console.log("db isn't connected");
-    process.exit(1);
   }
 };
 
